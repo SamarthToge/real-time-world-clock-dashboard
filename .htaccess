@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Route everything through index.php only if the requested file/dir
+# doesn't exist — this lets /api/alarms.php etc. be served directly.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+# Never serve the raw JSON data files to the outside world.
+<FilesMatch "\.json$">
+  Require all denied
+</FilesMatch>

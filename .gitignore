@@ -1,0 +1,15 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# Backend runtime data (keep the folder, ignore generated content)
+backend/data/*.json
+!backend/data/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.log
